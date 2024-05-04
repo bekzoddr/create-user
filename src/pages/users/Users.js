@@ -18,6 +18,7 @@ import admin from "../../assets/images/admin.jpg";
 import userImage from "../../assets/images/user.webp";
 import { useGetUsersQuery } from "../../context/createUser";
 import Container from "@mui/material/Container";
+import Loading from "../../components/loading/Loading";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -37,6 +38,9 @@ const Users = () => {
   if (error) {
     alert(error.message);
   }
+  if (!data) {
+    return <Loading />;
+  }
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -54,8 +58,8 @@ const Users = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={user.FirstName}
-        subheader={user.CreatedAt}
+        title={user.CreatedAt}
+        subheader={user.UpdatedAt}
       />
       {user.role === "admin" ? (
         <CardMedia
@@ -76,13 +80,22 @@ const Users = () => {
       <CardContent>
         <div variant="body2" color="text.secondary">
           <div>
-            <b>role:{user.role}</b>
+            <b>
+              role: <span>{user.role}</span>
+            </b>
             <br />
             <br />
-            <p>Name:{user.FirstName}</p>
-            <br /> <p>Surename:{user.LastName}</p>
+            <p>
+              Name: <span>{user.FirstName}</span>
+            </p>
+            <br />{" "}
+            <p>
+              Surename: <span>{user.LastName}</span>
+            </p>
             <br />
-            <p>tel:{user.phones}</p>
+            <p>
+              tel: <span>{user.phones}</span>
+            </p>
           </div>
         </div>
       </CardContent>
@@ -106,9 +119,18 @@ const Users = () => {
     </Card>
   ));
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       {" "}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <h1>Users</h1>
+      <br />
+      <br />
+      <br />
       <div className="users">{users}</div>
     </Container>
   );

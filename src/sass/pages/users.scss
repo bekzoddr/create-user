@@ -3,4 +3,12 @@
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 20px;
         justify-items: center;
+        p{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            span{
+                color: red;
+            }
+        }
 }
