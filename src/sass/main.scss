@@ -13,35 +13,69 @@
         border: none;
     }
 }
-form{
+/* Base styles */
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     gap: 30px;
-    width: 600px;
-    .name, .number, .username{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        input{
-            width: 300px;
-        }
+    max-width: 600px;
+    padding: 0 20px;
+    /* Add padding to give some space on the sides */
+}
+
+.name,
+.number,
+.username {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    /* Make inputs fill the available space */
+}
+
+.btn {
+    margin: 0 auto;
+}
+
+select,
+input,
+button {
+    padding: 15px;
+    /* Reduce padding for smaller screens */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    height: auto;
+    /* Let button height adjust based on content */
+}
+
+/* Focus styles */
+input:focus {
+    border: 1px solid rgb(0, 157, 255);
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 768px) {
+
+    /* Tablet styles */
+    form {
+        max-width: 600px;
+        /* Keep the same max-width for tablets */
     }
-    .btn{
-        margin: 0 auto;
-    }
-    select, input, button{
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        width: 300px;
-    }
-    button{
-        height: 55px;
-    }
-    input:focus{
-        border:1px solid rgb(0, 157, 255);
-        
+}
+
+@media only screen and (min-width: 992px) {
+
+    /* Desktop styles */
+    form {
+        max-width: 800px;
+        /* Adjust max-width for desktop screens */
     }
 }
