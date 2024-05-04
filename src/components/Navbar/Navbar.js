@@ -88,15 +88,18 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <NavLink to="/">
-                Home <FaHome />
-              </NavLink>
-              <NavLink to="/users">
-                Users <FaUsersGear />
-              </NavLink>
-              <NavLink to="/create-user">
-                Create-user <FaUserEdit />
-              </NavLink>
+              <div className="response">
+                {" "}
+                <NavLink to="/">
+                  Home <FaHome />
+                </NavLink>
+                <NavLink to="/users">
+                  Users <FaUsersGear />
+                </NavLink>
+                <NavLink to="/create-user">
+                  Create-user <FaUserEdit />
+                </NavLink>
+              </div>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />

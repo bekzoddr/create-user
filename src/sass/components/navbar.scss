@@ -11,3 +11,17 @@
     gap: 5px;
    }
 }
+.response{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 15px;
+    a{
+        color: black;
+        &:hover{
+            color: blue;
+        }
+    }
+}
